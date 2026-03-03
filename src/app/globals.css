@@ -4,8 +4,8 @@
    =========================== */
 
 :root {
-  --font-body: "Plus Jakarta Sans", "DM Sans", sans-serif;
-  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --white: #ffffff;
   --bg: #ffffff;
@@ -187,8 +187,8 @@ body {
 }
 
 .heading-display {
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-weight: 800;
   font-style: normal;
   color: var(--text-primary);
 }
@@ -231,6 +231,10 @@ body {
   gap: 28px;
   max-width: 700px;
   width: calc(100% - 32px);
+}
+
+.nav-spacer {
+  flex: 1;
 }
 
 .nav-logo {
@@ -1132,7 +1136,7 @@ body {
 }
 
 .roulette-page-title {
-  font-size: clamp(32px, 5vw, 52px);
+  font-size: clamp(36px, 6vw, 60px);
   text-align: center;
   margin-bottom: 8px;
   color: var(--text-primary);
@@ -1140,7 +1144,7 @@ body {
 }
 
 .roulette-page-subtitle {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text-secondary);
   text-align: center;
   margin-bottom: 20px;
@@ -1375,15 +1379,16 @@ body {
   .nav-cta {
     padding: 8px 16px;
     font-size: 12px;
+    margin-left: auto;
   }
 
   .hero {
-    padding: 110px 20px 50px;
+    padding: 110px 24px 50px;
     min-height: auto;
   }
 
   .hero-title {
-    font-size: clamp(32px, 8vw, 44px);
+    font-size: clamp(28px, 7vw, 40px);
   }
 
   .hero-subtitle {
@@ -1425,6 +1430,10 @@ body {
 
   .stat-value {
     font-size: 32px;
+  }
+
+  .stat-label {
+    font-size: 13px;
   }
 
   .how-section,
@@ -1501,11 +1510,19 @@ body {
   }
 
   .roulette-top-content {
-    padding: 30px 20px 16px;
+    padding: 24px 20px 12px;
   }
 
   .roulette-page-title {
-    font-size: 24px;
+    font-size: clamp(28px, 7vw, 38px);
+  }
+
+  .roulette-page-subtitle {
+    font-size: 15px;
+  }
+
+  .roulette-bottom-wrapper {
+    transform: translateX(-50%) translateY(40%);
   }
 
   .roulette-center-hub {
@@ -1516,6 +1533,10 @@ body {
 
   .roulette-start-title {
     font-size: clamp(24px, 6vw, 34px);
+  }
+
+  .roulette-start-subtitle {
+    padding: 0 8px;
   }
 
   .roulette-start-btn {
@@ -1535,11 +1556,16 @@ body {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 100px 16px 36px;
+    padding: 100px 20px 36px;
   }
 
   .hero-title {
-    font-size: clamp(28px, 8vw, 36px);
+    font-size: clamp(24px, 7vw, 32px);
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    padding: 0 4px;
   }
 
   .stats-grid {
@@ -1569,6 +1595,10 @@ body {
     height: 440px;
   }
 
+  .roulette-bottom-wrapper {
+    transform: translateX(-50%) translateY(35%);
+  }
+
   .roulette-center-hub {
     width: 52px;
     height: 52px;
@@ -1581,6 +1611,10 @@ body {
   }
 
   .roulette-page-title {
-    font-size: 20px;
+    font-size: clamp(24px, 6vw, 30px);
+  }
+
+  .roulette-page-subtitle {
+    font-size: 14px;
   }
 }

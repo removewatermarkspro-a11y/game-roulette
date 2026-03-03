@@ -27,6 +27,7 @@ export default function Home() {
           <a href="#testimonials" className="nav-link">Témoignages</a>
           <a href="#pricing" className="nav-link">Tarifs</a>
         </div>
+        <div className="nav-spacer" />
         <a href="#pricing" className="nav-cta">Commencer ↗</a>
       </nav>
 

@@ -21,12 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className={`${plusJakarta.variable}`}>{children}</body>
     </html>
   );

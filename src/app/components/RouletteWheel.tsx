@@ -92,8 +92,7 @@ export default function RouletteGame({ restoName }: RouletteGameProps) {
     }, []);
 
     const REVIEW_URL =
-        "https://www.google.com/search?q=Les+Freres+Laumiere+Paris+avis&oq=Les+Freres+Laumiere+Paris+avis&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhge0gEINDM0OGowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#lrd=0x47e66dc857797825:0x51c7268800ba8b5d,3,,,,";
-
+        "https://www.google.com/search?sca_esv=15c87dc32e9c6f01&cs=0&sxsrf=ANbL-n6UVwERM6q_Tsd-m7vxoecCwGx9Zw:1772577181457&q=les+fr%C3%A8res+laumi%C3%A8re+avis&ludocid=3419751808242785220&ibp=gwp;0,7&hl=fr-FR&sa=X&ved=2ahUKEwjZnvPJ5ISTAxXxAvsDHXaiBd4Q9fQKegQIKhAG&biw=390&bih=669&dpr=3#lkt=LocalPoiReviews&lpg=cid:CgIgAQ%3D%3D";
     const displayName = restoName
         .split(" ")
         .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
