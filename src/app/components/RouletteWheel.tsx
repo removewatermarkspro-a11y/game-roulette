@@ -12,25 +12,21 @@ interface Segment {
 }
 
 const SEGMENTS: Segment[] = [
-    { label: "Burger", emoji: "🍔", color1: "#e74c3c", color2: "#c0392b" },
-    { label: "Café", emoji: "☕", color1: "#10b981", color2: "#059669" },
-    { label: "Pizza", emoji: "🍕", color1: "#f39c12", color2: "#e67e22" },
-    { label: "Sandwich", emoji: "🥪", color1: "#8b5cf6", color2: "#7c3aed" },
-    { label: "Dessert", emoji: "🍰", color1: "#e91e63", color2: "#c2185b" },
-    { label: "Boisson", emoji: "🥤", color1: "#0ea5e9", color2: "#0284c7" },
-    { label: "Salade", emoji: "🥗", color1: "#22c55e", color2: "#16a34a" },
-    { label: "Smoothie", emoji: "🧃", color1: "#a855f7", color2: "#9333ea" },
-    { label: "Glace", emoji: "🍦", color1: "#ec4899", color2: "#db2777" },
-    { label: "Jus frais", emoji: "🍊", color1: "#f97316", color2: "#ea580c" },
-    { label: "Pâtisserie", emoji: "🧁", color1: "#d946ef", color2: "#c026d3" },
-    { label: "Croissant", emoji: "🥐", color1: "#eab308", color2: "#ca8a04" },
+    { label: "Free Drink", emoji: "🍹", color1: "#10b981", color2: "#059669" },
+    { label: "Perdu", emoji: "😢", color1: "#e74c3c", color2: "#c0392b" },
+    { label: "Free Drink", emoji: "🍹", color1: "#0ea5e9", color2: "#0284c7" },
+    { label: "Perdu", emoji: "😢", color1: "#f39c12", color2: "#e67e22" },
+    { label: "Free Drink", emoji: "🍹", color1: "#22c55e", color2: "#16a34a" },
+    { label: "Perdu", emoji: "😢", color1: "#8b5cf6", color2: "#7c3aed" },
+    { label: "Free Drink", emoji: "🍹", color1: "#06b6d4", color2: "#0891b2" },
+    { label: "Perdu", emoji: "😢", color1: "#ec4899", color2: "#db2777" },
 ];
 
 const SEGMENT_ANGLE = 360 / SEGMENTS.length;
 
-// Win segments: only Café (index 1) and Boisson (index 5)
-const WIN_INDICES = [1, 5];
-const LOSE_INDICES = SEGMENTS.map((_, i) => i).filter((i) => !WIN_INDICES.includes(i));
+// Win segments: Free Drink indices (0, 2, 4, 6) — but only 5% chance
+const WIN_INDICES = [0, 2, 4, 6];
+const LOSE_INDICES = [1, 3, 5, 7];
 
 function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number) {
     const rad = ((angleDeg - 90) * Math.PI) / 180;
@@ -118,9 +114,9 @@ export default function RouletteGame({ restoName }: RouletteGameProps) {
         hasSpunRef.current = true;
         setPhase("spinning");
 
-        // 80% lose, 20% win (only café or boisson)
+        // 95% lose, 5% win (Free Drink)
         const rand = Math.random();
-        const isWin = rand < 0.2;
+        const isWin = rand < 0.05;
         const targetIndex = isWin
             ? WIN_INDICES[Math.floor(Math.random() * WIN_INDICES.length)]
             : LOSE_INDICES[Math.floor(Math.random() * LOSE_INDICES.length)];
@@ -140,7 +136,7 @@ export default function RouletteGame({ restoName }: RouletteGameProps) {
         }, 4500);
     }, [rotation]);
 
-    const cx = 350, cy = 350, r = 350;
+    const cx = 600, cy = 600, r = 600;
 
     // ─── Result overlay (rendered via portal to avoid stacking context issues) ───
     const resultOverlay = result && phase === "done" && mounted
@@ -153,8 +149,8 @@ export default function RouletteGame({ restoName }: RouletteGameProps) {
                     </h2>
                     <p className="result-desc">
                         {result.isWin
-                            ? `Vous avez gagné un ${result.segment.label.toLowerCase()} gratuit ! ${result.segment.emoji} Montrez cet écran au comptoir.`
-                            : `Dommage, la roue s'est arrêtée sur ${result.segment.label} ${result.segment.emoji} mais le lot n'était pas disponible. Merci pour votre avis !`}
+                            ? `Vous avez gagné un Free Drink ! 🍹 Montrez cet écran au comptoir.`
+                            : `Dommage, ce n'est pas pour cette fois ! 😢 Merci pour votre avis Google !`}
                     </p>
                     {result.isWin && (
                         <div className="result-win-badge">
@@ -269,20 +265,20 @@ export default function RouletteGame({ restoName }: RouletteGameProps) {
                                 const labelPos = polarToCartesian(cx, cy, r * 0.52, midAngle);
                                 return (
                                     <g key={i}>
-                                        <path d={describeArc(cx, cy, r, startAngle, endAngle)} fill={`url(#seg-grad-${i})`} stroke="rgba(255,255,255,0.25)" strokeWidth="2" />
-                                        <text x={emojiPos.x} y={emojiPos.y} textAnchor="middle" dominantBaseline="central" fontSize="32" transform={`rotate(${midAngle},${emojiPos.x},${emojiPos.y})`}>{seg.emoji}</text>
+                                        <path d={describeArc(cx, cy, r, startAngle, endAngle)} fill={`url(#seg-grad-${i})`} stroke="rgba(255,255,255,0.25)" strokeWidth="3" />
+                                        <text x={emojiPos.x} y={emojiPos.y} textAnchor="middle" dominantBaseline="central" fontSize="54" transform={`rotate(${midAngle},${emojiPos.x},${emojiPos.y})`}>{seg.emoji}</text>
                                         <text
                                             x={labelPos.x}
                                             y={labelPos.y}
                                             textAnchor="middle"
                                             dominantBaseline="central"
-                                            fontSize="18"
+                                            fontSize="30"
                                             fontWeight="800"
                                             fill="#fff"
                                             transform={`rotate(${midAngle},${labelPos.x},${labelPos.y})`}
                                             style={{
                                                 fontFamily: "var(--font-body), sans-serif",
-                                                textShadow: "0 2px 6px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.3)",
+                                                textShadow: "0 3px 8px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3)",
                                                 letterSpacing: "0.5px",
                                             }}
                                         >

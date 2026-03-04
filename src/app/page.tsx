@@ -37,50 +37,34 @@ export default function Home() {
         <div className="hero-blob hero-blob-2" />
         <div className="hero-blob hero-blob-3" />
 
-        {/* Floating review cards — LEFT side */}
+        {/* Floating review cards — clustered near heading */}
         <div className="hero-float-card float-pos-l1">
           <div className="float-card-inner float-card-lg">
             <div className="float-card-stars">★★★★★</div>
             <p className="float-card-review">
-              &ldquo;Incroyable ! Mes avis Google ont explosé en 2 semaines&rdquo;
+              &ldquo;De 38 à 210 avis Google en 6 semaines. ROI immédiat.&rdquo;
             </p>
             <div className="float-card-author">
-              <div className="float-card-avatar">👨‍🍳</div>
+              <img src="/avatars/marco.png" alt="Marco Rossi" className="float-card-avatar float-card-avatar-photo" />
               <div>
-                <div className="float-card-name">Marco R.</div>
-                <div className="float-card-role">Pizza Roma, Paris</div>
+                <div className="float-card-name">Marco Rossi</div>
+                <div className="float-card-role">Osteria Roma, Paris 11e</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="hero-float-card float-pos-l2">
-          <div className="float-card-inner float-card-sm">
-            <div className="float-card-stars">★★★★★</div>
-            <p className="float-card-review">
-              &ldquo;Nos clients adorent le concept !&rdquo;
-            </p>
-            <div className="float-card-author">
-              <div className="float-card-avatar">👩‍💼</div>
-              <div>
-                <div className="float-card-name">Sophie M.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Floating review cards — RIGHT side */}
         <div className="hero-float-card float-pos-r1">
           <div className="float-card-inner float-card-md">
             <div className="float-card-stars">★★★★★</div>
             <p className="float-card-review">
-              &ldquo;On est passé de 45 à 230 avis en 2 mois. Incontournable.&rdquo;
+              &ldquo;Note Google passée de 3.9 à 4.8 en 3 mois.&rdquo;
             </p>
             <div className="float-card-author">
-              <div className="float-card-avatar">👨‍🍳</div>
+              <img src="/avatars/sarah.png" alt="Sarah Klein" className="float-card-avatar float-card-avatar-photo" />
               <div>
-                <div className="float-card-name">Karim B.</div>
-                <div className="float-card-role">Le Petit Bistro</div>
+                <div className="float-card-name">Sarah Klein</div>
+                <div className="float-card-role">Brasserie du Lac, Lyon</div>
               </div>
             </div>
           </div>
@@ -90,30 +74,29 @@ export default function Home() {
           <div className="float-card-inner float-card-sm">
             <div className="float-card-stars">★★★★★</div>
             <p className="float-card-review">
-              &ldquo;ROI incroyable pour 30€/mois&rdquo;
+              &ldquo;Mes équipes adorent, mes clients aussi.&rdquo;
             </p>
             <div className="float-card-author">
-              <div className="float-card-avatar">👩‍🍳</div>
+              <img src="/avatars/lea.png" alt="Léa Moreau" className="float-card-avatar float-card-avatar-photo" />
               <div>
-                <div className="float-card-name">Claire D.</div>
+                <div className="float-card-name">Léa Moreau</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="hero-float-card float-pos-r3">
-          <div className="float-card-inner float-card-xs">
-            <div className="float-card-row-compact">
-              <span className="float-card-stars-sm">★★★★★</span>
-              <span className="float-card-compact-note">4.9</span>
-            </div>
-            <div className="float-card-name" style={{ fontSize: 11 }}>Thomas F. · Sushi Master</div>
-          </div>
-        </div>
-
         <div className="hero-content">
-          <div className="badge" style={{ marginBottom: 24 }}>
-            ✨ Nouveau · Gamification intelligente
+          <div className="hero-social-proof">
+            <div className="hero-sp-avatars">
+              <img src="/avatars/marco.png" alt="Marco" className="hero-sp-avatar hero-sp-avatar-photo" />
+              <img src="/avatars/sarah.png" alt="Sarah" className="hero-sp-avatar hero-sp-avatar-photo" />
+              <img src="/avatars/karim.png" alt="Karim" className="hero-sp-avatar hero-sp-avatar-photo" />
+              <img src="/avatars/claire.png" alt="Claire" className="hero-sp-avatar hero-sp-avatar-photo" />
+            </div>
+            <div className="hero-sp-text">
+              <div className="hero-sp-stars">★★★★★</div>
+              <div className="hero-sp-label">+100 restaurateurs déjà conquis</div>
+            </div>
           </div>
 
           <h1 className="hero-title heading-display">
@@ -152,7 +135,7 @@ export default function Home() {
 
           <div className="social-proof">
             <p className="social-proof-text">
-              Rejoint par +4 000 commerces en France
+              Des centaines de restaurateurs déjà conquis
             </p>
             <div className="logos-marquee">
               <div className="logos-track">
@@ -166,10 +149,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── STATS ─── */}
-      <section className="stats-section">
+      < section className="stats-section" >
         <div className="stats-grid">
           <div className="stat-item">
             <div className="stat-value heading-display">+340<span className="text-orange">%</span></div>
@@ -188,10 +171,10 @@ export default function Home() {
             <div className="stat-label">par mois seulement</div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── COMMENT ÇA FONCTIONNE ─── */}
-      <section className="how-section" id="how">
+      < section className="how-section" id="how" >
         <div className="container">
           <div className="section-header">
             <div className="badge">⚡ Comment ça fonctionne</div>
@@ -242,10 +225,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── BENEFITS (left + right layout) ─── */}
-      <section className="benefits-section" id="benefits">
+      < section className="benefits-section" id="benefits" >
         <div className="container">
           <div className="benefits-layout">
             <div className="benefits-left">
@@ -311,10 +294,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── FEATURES GRID (6 cards) ─── */}
-      <section className="features-section" id="features">
+      < section className="features-section" id="features" >
         <div className="container">
           <div className="section-header">
             <div className="badge">🚀 Fonctionnalités</div>
@@ -372,10 +355,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── 6 TESTIMONIALS ─── */}
-      <section className="testimonials-section" id="testimonials">
+      < section className="testimonials-section" id="testimonials" >
         <div className="container">
           <div className="section-header">
             <div className="badge">⭐ Témoignages</div>
@@ -391,14 +374,12 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
-                &ldquo;En 2 mois, on est passé de 45 à 230 avis Google. Nos clients
-                adorent le concept de la roulette, c&apos;est devenu un vrai rituel !&rdquo;
+                &ldquo;En 8 semaines, on est passé de 42 à 218 avis Google. Notre classement local a littéralement décollé — on apparaît maintenant en premier sur notre quartier.&rdquo;
               </p>
               <div className="testimonial-author">
-                <div className="testimonial-avatar">👨‍🍳</div>
+                <img src="/avatars/marco.png" alt="Marco Rossi" className="testimonial-avatar testimonial-avatar-photo" />
                 <div>
                   <div className="testimonial-name">Marco Rossi</div>
-                  <div className="testimonial-role">Gérant · Pizza Roma, Paris</div>
                 </div>
               </div>
             </div>
@@ -406,14 +387,12 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
-                &ldquo;Le retour sur investissement est incroyable. 30€/mois pour
-                tripler mes avis ? Je recommande à tous les restaurateurs.&rdquo;
+                &ldquo;30€/mois, et mes avis ont triplé en 2 mois. Le calcul est vite fait. J&apos;aurais dû adopter ça bien plus tôt.&rdquo;
               </p>
               <div className="testimonial-author">
-                <div className="testimonial-avatar">👩‍💼</div>
+                <img src="/avatars/sarah.png" alt="Sarah Klein" className="testimonial-avatar testimonial-avatar-photo" />
                 <div>
-                  <div className="testimonial-name">Sophie Martin</div>
-                  <div className="testimonial-role">Propriétaire · Café Lumière, Lyon</div>
+                  <div className="testimonial-name">Sarah Klein</div>
                 </div>
               </div>
             </div>
@@ -421,14 +400,12 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
-                &ldquo;Mes clients reviennent exprès pour rejouer. C&apos;est la meilleure
-                stratégie de fidélisation qu&apos;on ait jamais testée.&rdquo;
+                &ldquo;Mise en place en moins de 10 minutes. Dès la première semaine, mes serveurs m&apos;ont signalé qu&apos;ils voyaient les clients scanner le QR code d&apos;eux-mêmes.&rdquo;
               </p>
               <div className="testimonial-author">
-                <div className="testimonial-avatar">👨‍🍳</div>
+                <img src="/avatars/karim.png" alt="Karim Benali" className="testimonial-avatar testimonial-avatar-photo" />
                 <div>
                   <div className="testimonial-name">Karim Benali</div>
-                  <div className="testimonial-role">Chef · Le Petit Bistro, Marseille</div>
                 </div>
               </div>
             </div>
@@ -436,14 +413,12 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
-                &ldquo;Notre note Google est passée de 3.8 à 4.7 en 3 mois.
-                Les nouveaux clients nous disent qu&apos;ils nous ont trouvés grâce aux avis.&rdquo;
+                &ldquo;Notre note est passée de 3.8 à 4.7. De nouveaux clients nous disent régulièrement qu&apos;ils nous ont choisis grâce à nos avis. C&apos;est concret.&rdquo;
               </p>
               <div className="testimonial-author">
-                <div className="testimonial-avatar">👩‍🍳</div>
+                <img src="/avatars/claire.png" alt="Claire Dubois" className="testimonial-avatar testimonial-avatar-photo" />
                 <div>
                   <div className="testimonial-name">Claire Dubois</div>
-                  <div className="testimonial-role">Gérante · Brasserie du Parc, Bordeaux</div>
                 </div>
               </div>
             </div>
@@ -451,14 +426,12 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
-                &ldquo;Installation en 5 minutes, résultats dès la première semaine.
-                La simplicité du système est un vrai plus pour mon équipe.&rdquo;
+                &ldquo;Outil simple, impact immédiat. Mon équipe n&apos;a rien eu à apprendre. Les clients jouent naturellement et laissent leur avis sans qu&apos;on le leur demande.&rdquo;
               </p>
               <div className="testimonial-author">
-                <div className="testimonial-avatar">👨‍💼</div>
+                <img src="/avatars/thomas.png" alt="Thomas Faure" className="testimonial-avatar testimonial-avatar-photo" />
                 <div>
                   <div className="testimonial-name">Thomas Faure</div>
-                  <div className="testimonial-role">Directeur · Sushi Master, Toulouse</div>
                 </div>
               </div>
             </div>
@@ -466,23 +439,21 @@ export default function Home() {
             <div className="testimonial-card">
               <div className="testimonial-stars">★★★★★</div>
               <p className="testimonial-text">
-                &ldquo;On a doublé notre fréquentation le week-end.
-                Les clients partagent même leurs gains sur Instagram !&rdquo;
+                &ldquo;On a vu +40% de fréquentation le week-end en 1 mois. Les clients parlent de la roulette entre eux, ça crée un vrai bouche-à-oreille digital.&rdquo;
               </p>
               <div className="testimonial-author">
-                <div className="testimonial-avatar">👩‍🍳</div>
+                <img src="/avatars/lea.png" alt="Léa Moreau" className="testimonial-avatar testimonial-avatar-photo" />
                 <div>
                   <div className="testimonial-name">Léa Moreau</div>
-                  <div className="testimonial-role">Co-fondatrice · Green Bowl, Nantes</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── PRICING ─── */}
-      <section className="pricing-section" id="pricing">
+      < section className="pricing-section" id="pricing" >
         <div className="container">
           <div className="section-header">
             <div className="badge">💳 Tarifs</div>
@@ -520,12 +491,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* ─── FOOTER ─── */}
-      <footer className="footer">
+      < footer className="footer" >
         <p>© 2026 AvisBoost — Tous droits réservés</p>
-      </footer>
+      </footer >
     </>
   );
 }
