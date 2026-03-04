@@ -114,9 +114,9 @@ export default function RouletteGame({ restoName }: RouletteGameProps) {
         hasSpunRef.current = true;
         setPhase("spinning");
 
-        // 95% lose, 5% win (Free Drink)
+        // 80% lose, 20% win (Free Drink)
         const rand = Math.random();
-        const isWin = rand < 0.05;
+        const isWin = rand < 0.20;
         const targetIndex = isWin
             ? WIN_INDICES[Math.floor(Math.random() * WIN_INDICES.length)]
             : LOSE_INDICES[Math.floor(Math.random() * LOSE_INDICES.length)];
@@ -215,14 +215,20 @@ export default function RouletteGame({ restoName }: RouletteGameProps) {
             <div className="roulette-page">
                 {/* Content above wheel */}
                 <div className="roulette-top-content">
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: '16px', gap: '8px' }}>
+                        <span style={{ fontSize: '11px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 500 }}>Propulsé par</span>
+                        <img src="/logo.png" alt="Luckyscan logo" style={{ height: '48px', objectFit: 'contain' }} />
+                    </div>
                     <h2 className="roulette-page-title heading-display">
                         Tournez la <span className="text-orange">roue !</span>
                     </h2>
                     <p className="roulette-page-subtitle">Tentez votre chance et gagnez un lot</p>
                     {phase === "ready" && (
-                        <button className="roulette-spin-topbtn" onClick={handleSpin}>
-                            🎰 TOURNER
-                        </button>
+                        <div style={{ position: 'relative', zIndex: 10, margin: '20px 0 80px 0' }}>
+                            <button className="roulette-spin-topbtn" onClick={handleSpin}>
+                                🎰 TOURNER
+                            </button>
+                        </div>
                     )}
                     {phase === "spinning" && (
                         <div style={{ fontSize: 15, color: "#999", fontWeight: 500, animation: "fadeIn 0.3s ease" }}>

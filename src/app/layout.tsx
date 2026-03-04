@@ -9,7 +9,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AvisBoost — Récoltez des avis Google grâce à la gamification",
+  title: "Luckyscan — Récoltez des avis Google grâce à la gamification",
   description:
     "Boostez vos avis Google avec une roulette interactive. Solution de gamification pour restaurants, cafés et commerces. 30€/mois.",
 };

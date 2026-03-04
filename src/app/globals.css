@@ -1432,12 +1432,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  padding: 30px 24px 10px;
+  padding: 10vh 24px 10px;
   flex: 1;
   z-index: 5;
-  max-height: 45vh;
+  max-height: 50vh;
 }
 
 .roulette-page-title {
@@ -1491,14 +1491,14 @@ body {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(45%);
+  transform: translateX(-50%) translateY(55%);
   z-index: 3;
 }
 
 .roulette-outer-glow {
   position: absolute;
-  width: 1250px;
-  height: 1250px;
+  width: 850px;
+  height: 850px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1510,8 +1510,8 @@ body {
 
 .roulette-wheel-container {
   position: relative;
-  width: 1200px;
-  height: 1200px;
+  width: 800px;
+  height: 800px;
 }
 
 .roulette-border-ring {
@@ -1552,8 +1552,8 @@ body {
 .roulette-svg {
   position: relative;
   z-index: 3;
-  width: 1200px;
-  height: 1200px;
+  width: 800px;
+  height: 800px;
   border-radius: 50%;
   overflow: hidden;
   filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.12));
@@ -1659,6 +1659,11 @@ body {
 /* ===========================
    RESPONSIVE
    =========================== */
+.mobile-menu-btn,
+.mobile-menu-dropdown {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav {
     padding: 8px 14px;
@@ -1668,6 +1673,92 @@ body {
 
   .nav-links {
     display: none;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  .hamburger-line.open-1 {
+    transform: rotate(45deg);
+  }
+
+  .hamburger-line.open-2 {
+    opacity: 0;
+  }
+
+  .hamburger-line.open-3 {
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu-dropdown {
+    position: fixed;
+    top: 60px;
+    left: 14px;
+    right: 14px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .mobile-menu-dropdown.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav-link {
+    font-size: 16px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobile-nav-cta {
+    display: inline-block;
+    background: var(--text-primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 8px;
   }
 
   .nav-logo {
@@ -1684,7 +1775,6 @@ body {
   .nav-cta {
     padding: 8px 16px;
     font-size: 12px;
-    margin-left: auto;
   }
 
   .hero {
@@ -1806,17 +1896,18 @@ body {
   /* Roulette wheel on tablet */
   .roulette-wheel-container,
   .roulette-svg {
-    width: 520px;
-    height: 520px;
+    width: 750px;
+    height: 750px;
   }
 
   .roulette-outer-glow {
-    width: 560px;
-    height: 560px;
+    width: 800px;
+    height: 800px;
   }
 
   .roulette-top-content {
-    padding: 24px 20px 12px;
+    padding: 3vh 20px 12px;
+    justify-content: center;
   }
 
   .roulette-page-title {
@@ -1828,7 +1919,7 @@ body {
   }
 
   .roulette-bottom-wrapper {
-    transform: translateX(-50%) translateY(40%);
+    transform: translateX(-50%) translateY(45%);
   }
 
   .roulette-center-hub {
@@ -1892,17 +1983,17 @@ body {
 
   .roulette-wheel-container,
   .roulette-svg {
-    width: 400px;
-    height: 400px;
+    width: 700px;
+    height: 700px;
   }
 
   .roulette-outer-glow {
-    width: 440px;
-    height: 440px;
+    width: 750px;
+    height: 750px;
   }
 
   .roulette-bottom-wrapper {
-    transform: translateX(-50%) translateY(35%);
+    transform: translateX(-50%) translateY(42%);
   }
 
   .roulette-center-hub {

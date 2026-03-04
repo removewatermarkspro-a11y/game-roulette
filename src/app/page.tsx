@@ -1,4 +1,9 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const logos = [
     { icon: "🍕", name: "Pizza Roma" },
     { icon: "☕", name: "Café Lumière" },
@@ -19,8 +24,7 @@ export default function Home() {
       {/* ─── NAVBAR ─── */}
       <nav className="nav">
         <a href="/" className="nav-logo">
-          <div className="nav-logo-icon">A</div>
-          AvisBoost
+          <img src="/logo.png" alt="Luckyscan logo" style={{ height: '64px' }} />
         </a>
         <div className="nav-links">
           <a href="#features" className="nav-link">Fonctionnalités</a>
@@ -28,8 +32,27 @@ export default function Home() {
           <a href="#pricing" className="nav-link">Tarifs</a>
         </div>
         <div className="nav-spacer" />
-        <a href="#pricing" className="nav-cta">Commencer ↗</a>
+        <a href="#pricing" className="nav-cta hidden-mobile">Commencer ↗</a>
+
+        {/* Hamburger button for mobile */}
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <div className={`hamburger-line ${isMobileMenuOpen ? 'open-1' : ''}`}></div>
+          <div className={`hamburger-line ${isMobileMenuOpen ? 'open-2' : ''}`}></div>
+          <div className={`hamburger-line ${isMobileMenuOpen ? 'open-3' : ''}`}></div>
+        </button>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      <div className={`mobile-menu-dropdown ${isMobileMenuOpen ? 'open' : ''}`}>
+        <a href="#features" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Fonctionnalités</a>
+        <a href="#testimonials" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Témoignages</a>
+        <a href="#pricing" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Tarifs</a>
+        <a href="#pricing" className="mobile-nav-cta" onClick={() => setIsMobileMenuOpen(false)}>Commencer ↗</a>
+      </div>
 
       {/* ─── HERO ─── */}
       <section className="hero">
@@ -366,7 +389,7 @@ export default function Home() {
               Ce que disent <span className="text-orange">nos clients.</span>
             </h2>
             <p className="section-subtitle">
-              Découvrez comment AvisBoost transforme la visibilité de nos partenaires.
+              Découvrez comment Luckyscan transforme la visibilité de nos partenaires.
             </p>
           </div>
 
@@ -468,7 +491,7 @@ export default function Home() {
           <div className="pricing-card">
             <div className="pricing-popular-tag">🔥 Populaire</div>
             <div className="pricing-body">
-              <h3 className="pricing-name">Pack AvisBoost Pro</h3>
+              <h3 className="pricing-name">Pack Luckyscan Pro</h3>
               <p className="pricing-tagline">Pour restaurants, cafés et commerces</p>
               <div className="pricing-price">
                 <span className="pricing-amount heading-display">30€</span>
@@ -495,7 +518,7 @@ export default function Home() {
 
       {/* ─── FOOTER ─── */}
       < footer className="footer" >
-        <p>© 2026 AvisBoost — Tous droits réservés</p>
+        <p>© 2026 Luckyscan — Tous droits réservés</p>
       </footer >
     </>
   );
